@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="atari" size="900.000000 1040.000000" />
+    <ImageTarget name="maze" size="513.000000 514.000000" />
+  </Tracking>
+</QCARConfig>
