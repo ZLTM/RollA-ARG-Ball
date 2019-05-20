@@ -8,39 +8,48 @@ public class ballScript : MonoBehaviour
     public float YTilt = 0f;
     public float NewYTilt;
     public GameObject spawnPoint;
+    public Camera CameraRotation;
+
 
     public float MovementSpeed;
+    float yRotation = 90f;
+    float xRotation = 0f;
+
+    public void Start()
+    {
+        float yRotation = CameraRotation.transform.rotation.y;
+        float xRotation = CameraRotation.transform.rotation.x;
+    }
 
     private void Update()
     {
-
-        if (NewXTilt <= XTilt)
+        if (CameraRotation.transform.eulerAngles.x <= XTilt)
         {
-            print("Tilted -z moving up");
+            print(XTilt+"Tilted -x moving up" + CameraRotation.transform.rotation.x);
             transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
         }
 
-        else if (NewXTilt >= XTilt)
+        else if (CameraRotation.transform.eulerAngles.x >= XTilt)
         {
-            print("Tilted -z moving down");
-            transform.Translate(-Vector3.forward * MovementSpeed * Time.deltaTime);
+            print(XTilt+"Tilted -x moving down" + CameraRotation.transform.rotation.x);
+            transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
         }
 
         else 
         {
-            print(" -z not moving");
+            print(" -x not moving");
         }
 
-        if (NewYTilt <= YTilt)
+        if (CameraRotation.transform.eulerAngles.y <= YTilt)
         {
-            print("Tilted -x moving right");
+            print(YTilt+"Tilted -y moving right" + CameraRotation.transform.rotation.y);
             transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
         }
 
-        else if (NewYTilt >= YTilt)
+        else if (CameraRotation.transform.eulerAngles.y >= YTilt)
         {
-            print("Tilted -x moving left");
-            transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
+            print(YTilt+"Tilted -y moving left" + CameraRotation.transform.rotation.y);
+            transform.Translate(-Vector3.right * MovementSpeed * Time.deltaTime);
         }
 
         else

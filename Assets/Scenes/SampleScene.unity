@@ -963,6 +963,7 @@ MonoBehaviour:
   YTilt: 0
   NewYTilt: 0
   spawnPoint: {fileID: 681042081}
+  CameraRotation: {fileID: 133494802}
   MovementSpeed: 0.2
 --- !u!1 &237580463
 GameObject:
