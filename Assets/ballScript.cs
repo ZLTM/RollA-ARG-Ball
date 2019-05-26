@@ -3,37 +3,40 @@ using System.Collections;
 
 public class ballScript : MonoBehaviour
 {
-    float XTilt = 90f;
-    float YTilt = 0f;
+    float XBegin;
+    float ZBegin;
     public GameObject spawnPoint;
-    public Camera CameraRotation;
+    public Camera CameraPosition;
 
 
     public float MovementSpeed;
-    float yRotation = 90f;
-    float xRotation = 0f;
+    float ZPosition = 0f;
+    float XPosition = 0f;
     float SphereZ;
     float SphereX;
-    float SphereY;
 
+    private void Start()
+    {
+        float XBegin = CameraPosition.transform.position.z;
+        float ZBegin = CameraPosition.transform.position.x;
+    }
 
     private void Update()
     {
-        float SphereY = GameObject.Find("Sphere").transform.position.y;
+        float SphereZ = GameObject.Find("Sphere").transform.position.z;
         float SphereX = GameObject.Find("Sphere").transform.position.z;
-        float SphereZ = GameObject.Find("Sphere").transform.position.x;
-        float yRotation = CameraRotation.transform.localRotation.eulerAngles.y;
-        float xRotation = CameraRotation.transform.localRotation.eulerAngles.x;
+        float ZPosition = CameraPosition.transform.position.z;
+        float XPosition = CameraPosition.transform.position.x;
 
-        if (xRotation <= XTilt)
+        if (XPosition <= XBegin)
         {
-            print(XTilt+"Tilted -x moving up" + xRotation);
+            print(XBegin + "Tilted -x moving right" + XPosition);
             transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
         }
 
-        else if (xRotation >= XTilt)
+        else if (XPosition >= XBegin)
         {
-            print(XTilt+"Tilted -x moving down" + xRotation);
+            print(XBegin + "Tilted -x moving left" + XPosition);
             transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
         }
 
@@ -42,24 +45,24 @@ public class ballScript : MonoBehaviour
             print(" -x not moving");
         }
 
-        if (yRotation <= YTilt)
+        if (ZPosition <= ZBegin)
         {
-            print(YTilt+"Tilted -y moving right" + yRotation);
+            print(ZBegin + "Tilted -z moving up" + ZPosition);
             transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
         }
 
-        else if (yRotation >= YTilt)
+        else if (ZPosition >= ZBegin)
         {
-            print(YTilt+"Tilted -y moving left" + yRotation);
-            transform.Translate(-Vector3.back * MovementSpeed * Time.deltaTime);
+            print(ZBegin + "Tilted -z moving down" + ZPosition);
+            transform.Translate(Vector3.back * MovementSpeed * Time.deltaTime);
         }
 
         else
         {
-            print(" -y not moving");
+            print(" -z not moving");
         }
 
-        if (SphereY <= -1 || SphereY >= 1 || SphereX <= -1 || SphereX >= 1 || SphereZ <= -1 || SphereZ >= 1)
+        if (SphereZ <= -1 || SphereZ >= 1 || SphereX <= -1 || SphereX >= 1 || SphereZ <= -1 || SphereZ >= 1)
         {
             transform.position = spawnPoint.transform.position;
         }
