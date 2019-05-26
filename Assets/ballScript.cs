@@ -3,10 +3,8 @@ using System.Collections;
 
 public class ballScript : MonoBehaviour
 {
-    public float XTilt = 90f;
-    public float NewXTilt;
-    public float YTilt = 0f;
-    public float NewYTilt;
+    float XTilt = 90f;
+    float YTilt = 0f;
     public GameObject spawnPoint;
     public Camera CameraRotation;
 
@@ -14,25 +12,29 @@ public class ballScript : MonoBehaviour
     public float MovementSpeed;
     float yRotation = 90f;
     float xRotation = 0f;
+    float SphereZ;
+    float SphereX;
+    float SphereY;
 
-    public void Start()
-    {
-        float yRotation = CameraRotation.transform.rotation.y;
-        float xRotation = CameraRotation.transform.rotation.x;
-    }
 
     private void Update()
     {
-        if (CameraRotation.transform.eulerAngles.x <= XTilt)
+        float SphereY = GameObject.Find("Sphere").transform.position.y;
+        float SphereX = GameObject.Find("Sphere").transform.position.z;
+        float SphereZ = GameObject.Find("Sphere").transform.position.x;
+        float yRotation = CameraRotation.transform.localRotation.eulerAngles.y;
+        float xRotation = CameraRotation.transform.localRotation.eulerAngles.x;
+
+        if (xRotation <= XTilt)
         {
-            print(XTilt+"Tilted -x moving up" + CameraRotation.transform.rotation.x);
-            transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
+            print(XTilt+"Tilted -x moving up" + xRotation);
+            transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
         }
 
-        else if (CameraRotation.transform.eulerAngles.x >= XTilt)
+        else if (xRotation >= XTilt)
         {
-            print(XTilt+"Tilted -x moving down" + CameraRotation.transform.rotation.x);
-            transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
+            print(XTilt+"Tilted -x moving down" + xRotation);
+            transform.Translate(Vector3.left * MovementSpeed * Time.deltaTime);
         }
 
         else 
@@ -40,21 +42,26 @@ public class ballScript : MonoBehaviour
             print(" -x not moving");
         }
 
-        if (CameraRotation.transform.eulerAngles.y <= YTilt)
+        if (yRotation <= YTilt)
         {
-            print(YTilt+"Tilted -y moving right" + CameraRotation.transform.rotation.y);
-            transform.Translate(Vector3.right * MovementSpeed * Time.deltaTime);
+            print(YTilt+"Tilted -y moving right" + yRotation);
+            transform.Translate(Vector3.forward * MovementSpeed * Time.deltaTime);
         }
 
-        else if (CameraRotation.transform.eulerAngles.y >= YTilt)
+        else if (yRotation >= YTilt)
         {
-            print(YTilt+"Tilted -y moving left" + CameraRotation.transform.rotation.y);
-            transform.Translate(-Vector3.right * MovementSpeed * Time.deltaTime);
+            print(YTilt+"Tilted -y moving left" + yRotation);
+            transform.Translate(-Vector3.back * MovementSpeed * Time.deltaTime);
         }
 
         else
         {
             print(" -y not moving");
+        }
+
+        if (SphereY <= -1 || SphereY >= 1 || SphereX <= -1 || SphereX >= 1 || SphereZ <= -1 || SphereZ >= 1)
+        {
+            transform.position = spawnPoint.transform.position;
         }
     }
 
