@@ -7,7 +7,7 @@ Reimagine of the Roll A Ball unity tutorial implemened in augmented reality
 [![License](https://img.shields.io/badge/License-Apache%202--0-343E7D.svg)](https://packagist.org/packages/phpunit/phpunit)
 
 Game made for a spatial computing talk in the bolivian catholic university
-<img width="50" height="50" border="0" align="center"  src="https://i.imgur.com/5dA4bLY.png"></a>
+<img border="0" align="center"  src="https://i.imgur.com/5dA4bLY.png"></a>
 
 ## Participation
 
@@ -32,11 +32,9 @@ Move the laberint up, down and to the sides to move the ball, make it out from t
 David Revilla:
 
 <a href="https://twitter.com/ZLTM_david" target="_blank">
-  <img width="50" height="50" border="0" align="center"  src="twitter-logo.jpg"></a>
+  <img width="50" height="50" border="0" align="center"  src="https://i.imgur.com/NseqTcz.jpg"></a>
 <a href="https://www.linkedin.com/in/zolutr/" target="_blank">
-  <img width="50" height="50" border="0" align="center"  src="linkedin-logo.png"></a>
-  <a href="https://codepen.io/zltm/pen/gXbZbJ" target="_blank">
-  <img width="50" height="50" border="0" align="center"  src="codepen-logo.png"></a>
+  <img width="50" height="50" border="0" align="center"  src="https://i.imgur.com/ZDZ4lgx.png"></a>
 
 * Write me to: jdavidrevillad@gmail.com
 * Look at my full [C.V](https://drive.google.com/drive/folders/0B9XODKe51qg8aFFXRE9aNE15QWc?usp=sharing)
