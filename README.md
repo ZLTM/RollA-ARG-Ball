@@ -25,7 +25,9 @@ Alternatively you can download the project and build it with unity 2019.
 
 ## Gameplay
 
+Center the maze with the phone camera after launching the app.
 Move the laberint up, down and to the sides to move the ball, make it out from the laberint.
+<img border="0" align="center"  src="https://i.imgur.com/BV2q8q6.jpg"></a>
 
 ## Contact
 
