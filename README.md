@@ -7,6 +7,8 @@ Reimagine of the Roll A Ball unity tutorial implemened in augmented reality
 [![License](https://img.shields.io/badge/License-Apache%202--0-343E7D.svg)](https://packagist.org/packages/phpunit/phpunit)
 
 Game made for a spatial computing talk in the bolivian catholic university
+
+
 <img border="0" align="center"  src="https://i.imgur.com/5dA4bLY.png"></a>
 
 ## Participation
@@ -27,6 +29,7 @@ Alternatively you can download the project and build it with unity 2019.
 
 Center the maze with the phone camera after launching the app.
 Move the laberint up, down and to the sides to move the ball, make it out from the laberint.
+
 
 <img border="0" align="center"  src="https://i.imgur.com/BV2q8q6.jpg"></a>
 
