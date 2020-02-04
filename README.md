@@ -9,7 +9,7 @@ Reimagine of the Roll A Ball unity tutorial implemened in augmented reality
 Game made for a spatial computing talk in the bolivian catholic university
 
 
-<img border="0" align="center"  src="https://i.imgur.com/5dA4bLY.png"></a>
+<img border="0" align="center"  src="https://imgur.com/uTPmV7G"></a>
 
 ## Participation
 
